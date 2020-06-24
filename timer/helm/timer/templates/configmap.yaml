@@ -1,0 +1,10 @@
+{{- if .Values.configMap.data -}}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "timer.fullname" . }}
+data:
+  {{- range $name, $value := .Values.configMap.data }}
+    {{ $name }}: {{ $value | quote }}
+  {{- end }}
+{{- end -}}
