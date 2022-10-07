@@ -23,6 +23,20 @@ Server is starting
 Serving on http://0.0.0.0:8080
 ```
 
+### Testing the endpoint
+
+Using curl:
+
+```bash
+$ # get human time
+$ curl -X GET http://0.0.0.0:8080/datetime/asia/jerusalem
+{"body": {"datetime": "2020-06-22T21:15:11.804696+03:00"}}
+
+$ # get epochtime time
+$ curl -X GET http://0.0.0.0:8080/epochtime/asia/jerusalem
+{"body": {"epochtime": 1592849876}}
+```
+
 ## Environment variables
 
 | Variable  | Default | Options               |
