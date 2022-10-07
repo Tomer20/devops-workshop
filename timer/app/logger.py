@@ -9,11 +9,7 @@ def __set_logger():
         '%(asctime)s %(name)-12s %(levelname)-8s %(message)s')
     handler.setFormatter(formatter)
     _logger.addHandler(handler)
-    if os.getenv("LOG_LEVEL", "debug") == "debug":
-        _logger.setLevel(logging.DEBUG)
-    elif os.getenv("LOG_LEVEL", "debug") == "info":
-        _logger.setLevel(logging.INFO)
-
+    _logger.setLevel(os.getenv("LOG_LEVEL", "INFO"))
     return _logger
 
 

@@ -29,20 +29,22 @@ The service exposes two endpoints:
 
 - `@app.route("/<timetype>/<continental>/<capital>", methods=['GET'])`: the main endpoint
 
-#### Run it locally
+## Run it locally
 
 ```bash
-cd auth/
-pip3 install -r requirements.txt
-python3 ./app/app.py
+$ cd auth/
+$ pip3 install -r requirements.txt
+$ python3 ./app/app.py
+
+Server is starting
+Serving on http://0.0.0.0:8090
 ```
 
-##### Environment variables
+## Environment variables
 
-- PORT: defaults to 8090
-
-- LOG_LEVEL: one of "info" or "debug", defaults to "info"
-
-- TIMER_HOST: hostname of `timer` service, defaults to "0.0.0.0"
-
-- TIMER_PORT: port of `timer` service, defaults to "8080"
+| Variable   | Default | Options                     |
+|------------|---------|-----------------------------|
+| PORT       | 8090    | Any valid port number       |
+| LOG_LEVEL  | INFO    | INFO, DEBUG                 |
+| TIMER_HOST | 0.0.0.0 | Hostname of `timer` service |
+| TIMER_PORT | 8080    | Port of `timer` service     |

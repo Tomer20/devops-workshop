@@ -1,6 +1,6 @@
 # Timer
 
-`timer` microservice is using `http://worldtimeapi.org` (thanks!) to get the current time at `continental/capital` in human time and in epoch time.
+`timer` service is using `http://worldtimeapi.org` (thanks!) to get the current time at `continental/capital` in human time and in epoch time.
 
 The service exposes three endpoints:
 
@@ -10,18 +10,22 @@ The service exposes three endpoints:
 
 - `@app.route("/epochtime/<continental>/<capital>", methods=['GET'])`: for epoch time
 
-This will be our `backend` microservice.
+This will be our `backend` service.
 
-#### Run it locally
+## Run it locally
 
 ```bash
-cd timer/
-pip3 install -r requirements.txt
-python3 ./app/app.py
+$ cd timer/
+$ pip3 install -r requirements.txt
+$ python3 ./app/app.py
+
+Server is starting
+Serving on http://0.0.0.0:8080
 ```
 
-##### Environment variables
+## Environment variables
 
-- PORT: defaults to 8080
-
-- LOG_LEVEL: one of "info" or "debug", defaults to "info"
+| Variable  | Default | Options               |
+|-----------|---------|-----------------------|
+| PORT      | 8080    | Any valid port number |
+| LOG_LEVEL | INFO    | INFO, DEBUG           |
